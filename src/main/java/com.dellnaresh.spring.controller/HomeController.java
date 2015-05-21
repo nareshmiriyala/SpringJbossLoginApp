@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/homepage")
 public class HomeController {
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.POST)
     public String home() {
-        return "home";
+        return "/WEB-INF/auth/home.jsp";
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String homeGet() {
+        return "/WEB-INF/auth/home.jsp";
     }
 }

@@ -5,6 +5,14 @@
      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
     <display-name>Spring Login</display-name>
+    <welcome-file-list>
+        <welcome-file>/auth/home.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <display-name>home</display-name>
+        <servlet-name>home</servlet-name>
+        <jsp-file>/auth/home.jsp</jsp-file>
+    </servlet>
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/spring-*-context.xml</param-value>
@@ -43,10 +51,10 @@
         <display-name>SecurityConstraint</display-name>
         <web-resource-collection>
             <web-resource-name>HTMLAuth</web-resource-name>
-            <url-pattern>/*</url-pattern>
+            <url-pattern>/auth/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>ROLE_MANAGER</role-name>
+            <role-name>Manager</role-name>
         </auth-constraint>
 
     </security-constraint>
@@ -54,17 +62,12 @@
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
-            <form-login-page>/WEB-INF/jsp/login.jsp</form-login-page>
-            <form-error-page>/WEB-INF/jsp/errorpage.jsp</form-error-page>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/errorpage.jsp</form-error-page>
         </form-login-config>
     </login-config>
     <security-role>
-        <role-name>ROLE_MANAGER</role-name>
+        <role-name>Manager</role-name>
     </security-role>
-    <security-role>
-        <role-name>ROLE_USER</role-name>
-    </security-role>
-     <session-config>
-        <session-timeout>30</session-timeout>
-    </session-config>
+
 </web-app>
