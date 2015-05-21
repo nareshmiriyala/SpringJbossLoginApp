@@ -8,6 +8,7 @@
 *.war
 *.ear
 
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
@@ -21,6 +22,7 @@ hs_err_pid*
 .DS_Store
 .AppleDouble
 .LSOverride
+.idea
 
 # Thumbnails
 ._*
@@ -35,7 +37,8 @@ hs_err_pid*
 Network Trash Folder
 Temporary Items
 .apdisk
-
+idea
+target
 # Windows
 # =========================
 
@@ -45,7 +48,7 @@ ehthumbs.db
 
 # Folder config file
 Desktop.ini
-
+*.iml
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
